@@ -6,7 +6,7 @@
                        label-float></mu-text-field>
       </mu-form-item>
       <mu-form-item prop="password" :rules="requiredRule2">
-        <mu-text-field v-model="loginFormInfo.password" icon="locked" prop="password" label="密码"
+        <mu-text-field type="password" v-model="loginFormInfo.password" icon="locked" prop="password" label="密码"
                        label-float></mu-text-field>
       </mu-form-item>
       <mu-button color="primary" @click="login">登录</mu-button>
