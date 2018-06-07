@@ -39,7 +39,7 @@
             .then(res => {
               this.toastr.success('登录成功!', 'Success');
               this.$store.commit(MUTATIONTYPES.UPDATE_USER_INFO, res);
-              this.$router.push({name: 'home'});
+              this.$router.replace({name: 'home'});
             });
         }
       }

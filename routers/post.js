@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
       })
       .catch(err => {
         return res.json({success: false, msg: err});
-      })
+      });
     // Post.find({}, (err,list) => {
     //   if(err){
     //     return res.json({success: false, msg: err});
@@ -17,14 +17,10 @@ router.get('/', (req, res) => {
     //   return res.json({success: true, data: list});
     // });
   })
-  .post('/', (req, res) => {
-    const user = req.user;
-    if (!user) {
-      return res.json({success: false, msg: '缺少token'});
-    }
+  .post('/', [verifyLogin, (req, res) => {
     const title = req.body.title,
       content = req.body.content,
-      userName = user.userName;
+      userName = req.user.userName;
     Post.create({title, content, auth: userName})
       .then(post => {
         res.json({success: true, data: true});
@@ -33,21 +29,24 @@ router.get('/', (req, res) => {
         res.json({success: false, msg: err});
       });
 
-  });
+  }])
+  .get('/userPostList', [verifyLogin, (req, res) => {
+    Post.find({auth: req.user.userName}).sort({created_at: -1})
+      .then(list => {
+        return res.json({success: true, data: list});
+      })
+      .catch(err => {
+        return res.json({success: false, msg: err});
+      });
+  }]);
 
-router.get('/userPostList', (req, res) => {
+module.exports = router;
+
+function verifyLogin(req, res, next) {
   const user = req.user;
   if (!user) {
     return res.json({success: false, msg: '缺少token'});
+  } else {
+    next();
   }
-  Post.find({auth: user.userName}).sort({created_at: -1})
-    .then(list => {
-      return res.json({success: true, data: list});
-    })
-    .catch(err => {
-      return res.json({success: false, msg: err});
-    })
-
-});
-
-module.exports = router;
+}

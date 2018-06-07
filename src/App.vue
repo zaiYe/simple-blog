@@ -115,7 +115,7 @@
         this.openLoginOut = false;
         this.$store.commit(MUTATIONTYPES.UPDATE_USER_INFO, {});
         this.toastr.success('登出成功!', 'Success');
-        this.$router.push('/');
+        this.$router.replace({name: 'home'});
       }
     }
   };
