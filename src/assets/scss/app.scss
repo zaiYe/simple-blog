@@ -1,0 +1,198 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /** iOS h5页面上下滑动卡顿问题  **/
+  -webkit-overflow-scrolling: touch;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  border: 0;
+  font: normal 14px/1.5 "PingFang SC", "Heiti SC", "Arial", "Lucida Grande", Verdana, STXhei, "Microsoft YaHei", "hei";
+  outline: none;
+  background: none;
+}
+
+a {
+  background: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  margin: 0;
+  color: inherit;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type='search'] {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+[v-cloak] {
+  display: block;
+}
+
+/*清除ie输入框删除按钮及显示密码*/
+::-ms-clear,
+::-ms-reveal {
+  display: none;
+}
+
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+::-ms-expand {
+  display: none;
+}
+
+/*去除type=number的自带按钮*/
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="search"],
+input[type="reset"] {
+  appearance: none;
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
+
+textarea {
+  -webkit-appearance: none;
+}
+
+ul, ol, dl {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.link-active-class{
+  background-color: rgba(0,0,0,.1);
+}
+
+.tc{
+  text-align: center;
+}
